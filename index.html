@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUCLIC - Nuclear innovation consultancy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+</head>
+<body>
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+    
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="image/NUCLIC_logo.PNG" alt="NUCLIC Logo" id="nuclic-logo" class="header-logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#mission" class="nav-link">Mission</a></li>
+                <li><a href="#expertise" class="nav-link">Expertise</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#partners" class="nav-link">Partners & Clients</a></li>
+                <li><a href="publications.html" class="nav-link">Publications</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <div class="mobile-menu-container">
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#home" class="mobile-nav-link">Home</a></li>
+                <li><a href="#mission" class="mobile-nav-link">Mission</a></li>
+                <li><a href="#expertise" class="mobile-nav-link">Expertise</a></li>
+                <li><a href="#services" class="mobile-nav-link">Services</a></li>
+                <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+                <li><a href="#partners" class="mobile-nav-link">Partners & Clients</a></li>
+                <li><a href="publications.html" class="mobile-nav-link">Publications</a></li>
+                <li><a href="#about" class="mobile-nav-link">About</a></li>
+                <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <section id="home" class="section hero parallax-wrapper">
+            <div id="sparkles-demo-container" class="sparkles-container"></div>
+            <div class="hero-content">
+                <div class="hero-text gsap-fade-up">
+                    <h1>NUCL<span style="color: #ff0000;">IC</span></h1>
+                    <div class="animated-text-container">
+                        <h2 class="static-text">Nuclear innovation consultancy</h2>
+                        <div class="animated-text-wrapper">
+                            <h2 class="animated-text">Nuclear innovation<br class="mobile-break"> consultancy</h2>
+                            <h2 class="animated-text">Reactor safety<br class="mobile-break"> & criticality analysis</h2>
+                            <h2 class="animated-text">Project management<br class="mobile-break"> & coordination</h2>
+                        </div>
+                    </div>
+                    <p>Supporting and promoting the peaceful and innovative use of nuclear energy technology</p>
+                    <a href="#contact" class="btn">Schedule a free consultation</a>
+                </div>
+                <div class="hero-image gsap-fade-left">
+                    <img src="image/NUCLIC_logo.PNG" alt="NUCLIC Logo" id="atom-illustration">
+                </div>
+            </div>
+            <div class="scroll-indicator gsap-fade-up">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrow">
+                    <span></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="mission" class="section">
+            <div class="container">
+                <h2 class="section-title gsap-fade-up">Our Mission</h2>
+                <p class="subtitle gsap-fade-up">NUCLIC aims to contribute to the effective use of nuclear technology while maintaining the highest safety standards.</p>
+                <div class="section-content">
+                    <div class="text-content">
+                        <p class="highlight">NUCLIC's mission is to support and promote the peaceful and innovative application of nuclear energy technology.</p>
+                        <p>We focus on providing high-quality consultancy services for the nuclear sector, with strong expertise in reactor physics and safety.</p>
+                    </div>
+                    <div class="visual-content">
+                        <div class="reactor-generations">
+                            <h3>Reactor Generations 1 to 4</h3>
+                            <div class="generations-graphic">
+                                <div class="generation" data-gen="1">
+                                    <span class="gen-number">01</span>
+                                    <span class="gen-label">First Generation</span>
+                                </div>
+                                <div class="generation" data-gen="2">
+                                    <span class="gen-number">02</span>
+                                    <span class="gen-label">Second Generation</span>
+                                </div>
+                                <div class="generation" data-gen="3">
+                                    <span class="gen-number">03</span>
+                                    <span class="gen-label">Third Generation</span>
+                                </div>
+                                <div class="generation" data-gen="4">
+                                    <span class="gen-number">04</span>
+                                    <span class="gen-label">Fourth Generation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="expertise" class="section">
+            <div class="container">
+                <h2 class="section-title gsap-fade-up">Expertise & Interests</h2>
+                <p class="subtitle gsap-fade-up">NUCLIC specializes in nuclear reactor physics and safety, with expertise spanning various reactor types and advanced nuclear systems.</p>
+                <div class="cards-container">
+                    <div class="card">
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/>
+                            </svg>
+                        </div>
+                        <h3>Reactor Physics</h3>
+                        <ul>
+                            <li>High temperature gas-cooled reactors (HTR/HTGR)</li>
+                            <li>Light water reactors (LWR): PWR and BWR</li>
+                            <li>Research reactors: MTR</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1Z"/>
+                            </svg>
+                        </div>
+                        <h3>Nuclear Safety</h3>
+                        <ul>
+                            <li>Reactor safety</li>
+                            <li>Criticality safety</li>
+                            <li>Knowledge and information management</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z"/>
+                            </svg>
+                        </div>
+                        <h3>Advanced Systems</h3>
+                        <ul>
+                            <li>Generation IV and beyond</li>
+                            <li>Nuclear fuel cycle</li>
+                            <li>Exotic nuclear systems & applications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <div class="container">
+                <h2 class="section-title gsap-fade-up">Consultancy Services</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12.8,17.28L10.15,14.63L11.55,13.23L12.8,14.5L16.45,10.83L17.85,12.23L12.8,17.28Z" />
+                            </svg>
+                        </div>
+                        <h3>Research & Advice</h3>
+                        <p>Research, assessment, independent review, reporting & advice</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M8,3A2,2 0 0,0 6,5V9A2,2 0 0,1 4,11H3V13H4A2,2 0 0,1 6,15V19A2,2 0 0,0 8,21H10V19H8V14A2,2 0 0,0 6,12A2,2 0 0,0 8,10V5H10V3M16,3A2,2 0 0,1 18,5V9A2,2 0 0,0 20,11H21V13H20A2,2 0 0,0 18,15V19A2,2 0 0,1 16,21H14V19H16V14A2,2 0 0,1 18,12A2,2 0 0,1 16,10V5H14V3H16Z" />
+                            </svg>
+                        </div>
+                        <h3>Modeling & Analysis</h3>
+                        <p>Modeling and (numerical) analysis of nuclear systems</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z" />
+                            </svg>
+                        </div>
+                        <h3>Education & Training</h3>
+                        <p>Education, training & course development</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M3,3H21V7H3V3M4,8H20V21H4V8M9.5,11A0.5,0.5 0 0,0 9,11.5V13H15V11.5A0.5,0.5 0 0,0 14.5,11H9.5Z" />
+                            </svg>
+                        </div>
+                        <h3>Project Management</h3>
+                        <p>Project management & coordination</p>
+                    </div>
+                </div>
+                <div class="cta-container">
+                    <p>Contact us informally to find out how we can help you. If a problem is outside our normal area of expertise, we can involve additional experts!</p>
+                    <a href="#contact" class="btn">Contact us</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title gsap-fade-up">Activities & Projects</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2017 - 2020</div>
+                            <h3>Euratom Horizon 2020 project "GEMINI+"</h3>
+                            <p>Partner/beneficiary of the Euratom Horizon 2020 project "GEMINI+", responsible for prismatic block type HTGR core neutronics analysis.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">October 2017</div>
+                            <h3>IAEA Expert Mission to BATAN</h3>
+                            <p>Participation in IAEA follow-up Expert Mission to BATAN, Serpong, Indonesia: review of the design and safety documents of the RDE (Experimental Power Reactor: "Reaktor Daya Eksperimental") (small HTGR).</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">May 2017 - Present</div>
+                            <h3>Criticality Safety COVRA</h3>
+                            <p>Criticality safety assessment and advice for the national Netherlands nuclear waste processing and storage facility COVRA, Nieuwdorp/Borsele, The Netherlands.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="partners" class="section">
+            <div class="container">
+                <h2 class="section-title gsap-fade-up">Partners & Clients</h2>
+                <p class="subtitle gsap-fade-up">NUCLIC collaborates with an international network of leading experts and organizations in nuclear technology, governance, and sustainability.</p>
+                
+                <div class="testimonials-container">
+                    <div class="testimonials-slider">
+                        <div class="testimonials-images">
+                            <!-- Images will be dynamically loaded here via JavaScript -->
+                        </div>
+                        <div class="testimonials-content">
+                            <div class="testimonial-text">
+                                <!-- Content will be dynamically loaded here via JavaScript -->
+                            </div>
+                            <div class="testimonial-controls">
+                                <button class="btn-slider btn-prev">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <button class="btn-slider btn-next">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="partners-slider-container">
+                    <h3 class="partners-slider-title">Our Partners</h3>
+                    <div class="infinite-slider-wrapper">
+                        <div class="infinite-slider">
+                            <div class="infinite-slider-content">
+                                <!-- Example partner logos -->
+                                <div class="partner-logo-item">
+                                    <div class="placeholder-logo">
+                                        <a href="https://www.iaea.org/" target="_blank">
+                                            <img src="image/iaea-logo-transparant.PNG" alt="IAEA Logo" width="80" height="40">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="partner-logo-item">
+                                    <div class="placeholder-logo">
+                                        <svg width="80" height="40" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="5" y="5" width="70" height="30" rx="4" stroke="#ffffff" stroke-width="2"/>
+                                            <text x="40" y="25" font-family="Arial" font-size="12" text-anchor="middle" fill="#ffffff">NRG</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="partner-logo-item">
+                                    <div class="placeholder-logo">
+                                        <svg width="80" height="40" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="5" y="5" width="70" height="30" rx="4" stroke="#ffffff" stroke-width="2"/>
+                                            <text x="40" y="25" font-family="Arial" font-size="12" text-anchor="middle" fill="#ffffff">AREVA</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="partner-logo-item">
+                                    <div class="placeholder-logo">
+                                        <svg width="80" height="40" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="5" y="5" width="70" height="30" rx="4" stroke="#ffffff" stroke-width="2"/>
+                                            <text x="40" y="25" font-family="Arial" font-size="12" text-anchor="middle" fill="#ffffff">CEA</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="partner-logo-item">
+                                    <div class="placeholder-logo">
+                                        <svg width="80" height="40" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="5" y="5" width="70" height="30" rx="4" stroke="#ffffff" stroke-width="2"/>
+                                            <text x="40" y="25" font-family="Arial" font-size="12" text-anchor="middle" fill="#ffffff">OECD-NEA</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="partner-logo-item">
+                                    <div class="placeholder-logo">
+                                        <a href="https://www.covra.nl/en/" target="_blank">
+                                            <img src="image/Covra-logo_transparant.PNG" alt="COVRA Logo" width="100" height="50">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="partner-logo-item">
+                                    <div class="placeholder-logo">
+                                        <svg width="80" height="40" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="5" y="5" width="70" height="30" rx="4" stroke="#ffffff" stroke-width="2"/>
+                                            <text x="40" y="25" font-family="Arial" font-size="12" text-anchor="middle" fill="#ffffff">EURATOM</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="partner-logo-item">
+                                    <div class="placeholder-logo">
+                                        <a href="https://www.nuclear-21.net/" target="_blank">
+                                            <img src="image/Nuclear-21_Logo_transparant.PNG" alt="Nuclear-21 Logo" width="80" height="40">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="section">
+            <div class="container">
+                <h2 class="section-title gsap-fade-up">Publications & Presentations</h2>
+                <p class="subtitle gsap-fade-up">For over 30 years, this archive has reflected ongoing contributions to nuclear science, radiation protection, and scientific education — including peer-reviewed publications, invited lectures, and technical reports.</p>
+                <div class="cta-container">
+                    <a href="publications.html" class="btn">Explore the full archive</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title gsap-fade-up">About Me</h2>
+                <p class="subtitle gsap-fade-up">NUCLIC provides nuclear consultancy services with a focus on reactor physics and safety. Based in the Netherlands, we serve clients worldwide.</p>
+                <div class="section-content">
+                    <div class="profile-image">
+                        <img src="image/profiel foto jim_ tranparant 1.PNG" alt="Dr. J.C. Kuijper" class="person-photo">
+                        <div class="download-buttons">
+                            <a href="https://www.nuclic.nl/About/CV_Kuijper_JC.pdf" class="btn" target="_blank">Download CV</a>
+                            <a href="https://www.nuclic.nl/About/CV_Kuijper_JC_short.pdf" class="btn" target="_blank">Download CV (short)</a>
+                        </div>
+                    </div>
+                    <div class="text-content">
+                        <div class="about-bio">
+                            <p>Jim Kuijper received a PhD in nuclear reactor physics from Delft University of Technology (Delft, NLD) in 1992. His PhD work comprised the investigation of the properties of a novel nuclear reactor design with gaseous fuel (so, a Gaseous Core Fission Reactor) by means of computer simulation. Since then he reverted to more "standard" nuclear systems with the Energy Research Foundation ECN and the Nuclear Research & Consultancy Group NRG in Petten, the Netherlands, until 2014. In 2015 he initiated NUCLIC (Nuclear Innovation Consultancy). In May 2017 he also joined Nuclear-21.</p>
+                            
+                            <p>His main field of expertise includes nuclear reactor physics, space-time reactor kinetics, reactor dynamics, reactor safety, criticality safety, uncertainty assessment and computer code development for various nuclear reactor systems, in which he has been active both as researcher and project manager. From 2006 until 2009 he was the coordinator of the PUMA project ("Plutonium and Minor Actinide Management in Thermal High-Temperature Gas-Cooled Reactors") within the EURATOM 6th Framework Program.</p>
+                            
+                            <p>Jim has been a member of the Reactor Safety Committee of the Petten research site (NLD) for over 20 years, advising the managements of NRG, ECN as well as EURATOM/JRC-IET, on reactor physics and criticality safety aspects of the nuclear installations at the site. Also he has been active as teacher/course developer of reactor physics, kinetics and criticality safety for over 18 years (since 1995) and as Liaison Officer for the Netherlands for the IAEA International Nuclear Information System (INIS) since 2008.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title gsap-fade-up">Contact</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-person">
+                            <div class="person-avatar">
+                                <img src="image/profiel foto jim_ tranparant 1.PNG" alt="Dr. J.C. Kuijper" class="person-photo">
+                            </div>
+                            <div class="person-details">
+                                <h3>Dr. J.C. Kuijper (Jim)</h3>
+                                <p>Founder, senior consultant & reactor physics expert</p>
+                                <ul class="contact-links">
+                                    <li>
+                                        <svg width="20" height="20" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
+                                        </svg>
+                                        <a href="tel:+31640229728">+31 (0)6 4022 9728</a>
+                                    </li>
+                                    <li>
+                                        <svg width="20" height="20" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
+                                        </svg>
+                                        <a href="mailto:jimkuijper@gmail.com">jimkuijper@gmail.com</a>
+                                    </li>
+                                    <li>
+                                        <svg width="20" height="20" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.46 12.92,11.24V10.13H10.13V18.5H12.92V13.57C12.92,12.8 13.54,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,5.95 7.81,5.19 6.88,5.19A1.69,1.69 0 0,0 5.19,6.88C5.19,7.81 5.95,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z" />
+                                        </svg>
+                                        <a href="https://www.linkedin.com/in/jimkuijper" target="_blank">LinkedIn</a>
+                                    </li>
+                                    <li>
+                                        <svg width="20" height="20" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L21.5,20L20,21.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+                                        </svg>
+                                        <a href="https://www.researchgate.net/profile/Jim-Kuijper" target="_blank">ResearchGate</a>
+                                    </li>
+                                    <li>
+                                        <svg width="20" height="20" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M12,3L1,9L12,15L23,9L12,3M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
+                                        </svg>
+                                        <a href="https://independent.academia.edu/JimKuijper" target="_blank">Academia.edu</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="company-address">
+                            <h3>NUCL<span style="color: #ff0000;">IC</span></h3>
+                            <p>Iepenlaan 129<br>1741TD Schagen<br>The Netherlands</p>
+                            <p>KvK: 65669193<br>VAT: NL0013629676B87</p>
+                            <p>Email: <a href="mailto:contact@nuclic.nl">contact@nuclic.nl</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Get in Touch</h3>
+                        <p class="form-intro">Ready to learn more about our services? Fill out the form below and we'll get back to you as soon as possible.</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="How can we help you?" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Please describe your request in detail..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-submit">Schedule free consultation</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="image/NUCLIC_logo.PNG" alt="NUCLIC Logo" id="nuclic-logo-footer" class="footer-logo-img">
+                    <p>NUCLIC - Nuclear innovation consultancy</p>
+                </div>
+                <div class="footer-nav">
+                    <a href="#home">Home</a>
+                    <a href="#mission">Mission</a>
+                    <a href="#expertise">Expertise</a>
+                    <a href="#services">Services</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#partners">Partners</a>
+                    <a href="publications.html">Publications</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-sponsor">
+                    <a href="https://www.stichting-eline.org/nl/public/index" target="_blank">
+                        <img src="image/Eline_logo_transparant.PNG" alt="Eline Foundation Logo" class="footer-sponsor-logo">
+                    </a>
+                    <p><a href="https://www.stichting-eline.org/nl/public/index" target="_blank">NUCLIC is proud sponsor of the Eline Foundation - de Cirkel is Rond</a></p>
+                    <p>"To support the education of children in the Chongqing Municipality, People's Republic of China"</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 NUCLIC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- tsParticles library -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
