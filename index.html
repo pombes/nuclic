@@ -24,14 +24,12 @@
                 <img src="image/NUCLIC_logo.PNG" alt="NUCLIC Logo" id="nuclic-logo" class="header-logo">
             </a>
         </div>
-        <nav>
-            <ul>
+        <nav class="nav-menu">
+            <ul class="nav-list">
                 <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#mission" class="nav-link">Mission</a></li>
                 <li><a href="#expertise" class="nav-link">Expertise</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#partners" class="nav-link">Partners & Clients</a></li>
                 <li><a href="publications.html" class="nav-link">Publications</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -48,11 +46,9 @@
         <nav class="mobile-nav">
             <ul>
                 <li><a href="#home" class="mobile-nav-link">Home</a></li>
-                <li><a href="#mission" class="mobile-nav-link">Mission</a></li>
                 <li><a href="#expertise" class="mobile-nav-link">Expertise</a></li>
                 <li><a href="#services" class="mobile-nav-link">Services</a></li>
-                <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
-                <li><a href="#partners" class="mobile-nav-link">Partners & Clients</a></li>
+                <li><a href="#projects" class="mobile-nav-link">Projects & Clients</a></li>
                 <li><a href="publications.html" class="mobile-nav-link">Publications</a></li>
                 <li><a href="#about" class="mobile-nav-link">About</a></li>
                 <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
@@ -69,60 +65,17 @@
                     <div class="animated-text-container">
                         <h2 class="static-text">Nuclear innovation consultancy</h2>
                         <div class="animated-text-wrapper">
-                            <h2 class="animated-text">Nuclear innovation<br class="mobile-break"> consultancy</h2>
-                            <h2 class="animated-text">Reactor safety<br class="mobile-break"> & criticality analysis</h2>
-                            <h2 class="animated-text">Project management<br class="mobile-break"> & coordination</h2>
+                            <h2 class="animated-text">Nuclear innovation<span class="mobile-only-break"><br></span> consultancy</h2>
+                            <h2 class="animated-text">Reactor safety &<span class="mobile-only-break"><br></span> criticality analyses</h2>
+                            <h2 class="animated-text">Project &<span class="mobile-only-break"><br></span> management</h2>
                         </div>
                     </div>
                     <p>Supporting and promoting the peaceful and innovative use of nuclear energy technology</p>
-                    <a href="#contact" class="btn">Schedule a free consultation</a>
+                    <p><small>Partner of <a href="https://www.nuclear-21.net/" target="_blank" rel="noopener">Nuclear-21</a></small></p>
+                    <a href="#contact" class="btn">Contact us</a>
                 </div>
                 <div class="hero-image gsap-fade-left">
                     <img src="image/NUCLIC_logo.PNG" alt="NUCLIC Logo" id="atom-illustration">
-                </div>
-            </div>
-            <div class="scroll-indicator gsap-fade-up">
-                <div class="mouse">
-                    <div class="wheel"></div>
-                </div>
-                <div class="arrow">
-                    <span></span>
-                </div>
-            </div>
-        </section>
-
-        <section id="mission" class="section">
-            <div class="container">
-                <h2 class="section-title gsap-fade-up">Our Mission</h2>
-                <p class="subtitle gsap-fade-up">NUCLIC aims to contribute to the effective use of nuclear technology while maintaining the highest safety standards.</p>
-                <div class="section-content">
-                    <div class="text-content">
-                        <p class="highlight">NUCLIC's mission is to support and promote the peaceful and innovative application of nuclear energy technology.</p>
-                        <p>We focus on providing high-quality consultancy services for the nuclear sector, with strong expertise in reactor physics and safety.</p>
-                    </div>
-                    <div class="visual-content">
-                        <div class="reactor-generations">
-                            <h3>Reactor Generations 1 to 4</h3>
-                            <div class="generations-graphic">
-                                <div class="generation" data-gen="1">
-                                    <span class="gen-number">01</span>
-                                    <span class="gen-label">First Generation</span>
-                                </div>
-                                <div class="generation" data-gen="2">
-                                    <span class="gen-number">02</span>
-                                    <span class="gen-label">Second Generation</span>
-                                </div>
-                                <div class="generation" data-gen="3">
-                                    <span class="gen-number">03</span>
-                                    <span class="gen-label">Third Generation</span>
-                                </div>
-                                <div class="generation" data-gen="4">
-                                    <span class="gen-number">04</span>
-                                    <span class="gen-label">Fourth Generation</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -130,7 +83,7 @@
         <section id="expertise" class="section">
             <div class="container">
                 <h2 class="section-title gsap-fade-up">Expertise & Interests</h2>
-                <p class="subtitle gsap-fade-up">NUCLIC specializes in nuclear reactor physics and safety, with expertise spanning various reactor types and advanced nuclear systems.</p>
+                <p class="subtitle gsap-fade-up"><span class="nuclic-text">NUCL<span class="highlight-red">IC</span></span> specializes in nuclear reactor physics and safety, with expertise spanning various reactor types and advanced nuclear systems.</p>
                 <div class="cards-container">
                     <div class="card">
                         <div class="card-icon">
@@ -155,7 +108,6 @@
                         <ul>
                             <li>Reactor safety</li>
                             <li>Criticality safety</li>
-                            <li>Knowledge and information management</li>
                         </ul>
                     </div>
                     <div class="card">
@@ -177,7 +129,7 @@
 
         <section id="services" class="section">
             <div class="container">
-                <h2 class="section-title gsap-fade-up">Consultancy Services</h2>
+                <h2 class="section-title gsap-fade-up">Services</h2>
                 <div class="services-grid">
                     <div class="service-item">
                         <div class="service-icon">
@@ -217,7 +169,11 @@
                     </div>
                 </div>
                 <div class="cta-container">
-                    <p>Contact us informally to find out how we can help you. If a problem is outside our normal area of expertise, we can involve additional experts!</p>
+                    <p>Contact us informally to find out how we can help you. If a problem is outside our normal area of expertise, we can involve additional experts!
+                        <a href="https://www.nuclear-21.net/" target="_blank" rel="noopener" style="display:inline-block; vertical-align:middle; margin-left:12px;">
+                            <img src="image/Nuclear-21_Logo_transparant.PNG" alt="Nuclear-21 Logo" style="height:32px; width:auto; vertical-align:middle;">
+                        </a>
+                    </p>
                     <a href="#contact" class="btn">Contact us</a>
                 </div>
             </div>
@@ -225,7 +181,7 @@
 
         <section id="projects" class="section">
             <div class="container">
-                <h2 class="section-title gsap-fade-up">Activities & Projects</h2>
+                <h2 class="section-title gsap-fade-up">Projects & Clients</h2>
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
@@ -252,45 +208,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="partners" class="section">
-            <div class="container">
-                <h2 class="section-title gsap-fade-up">Partners & Clients</h2>
-                <p class="subtitle gsap-fade-up">NUCLIC collaborates with an international network of leading experts and organizations in nuclear technology, governance, and sustainability.</p>
-                
-                <div class="testimonials-container">
-                    <div class="testimonials-slider">
-                        <div class="testimonials-images">
-                            <!-- Images will be dynamically loaded here via JavaScript -->
-                        </div>
-                        <div class="testimonials-content">
-                            <div class="testimonial-text">
-                                <!-- Content will be dynamically loaded here via JavaScript -->
-                            </div>
-                            <div class="testimonial-controls">
-                                <button class="btn-slider btn-prev">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                                <button class="btn-slider btn-next">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="partners-slider-container">
-                    <h3 class="partners-slider-title">Our Partners</h3>
+                    <h3 class="partners-slider-title">Our Clients</h3>
                     <div class="infinite-slider-wrapper">
                         <div class="infinite-slider">
                             <div class="infinite-slider-content">
-                                <!-- Example partner logos -->
+                                <!-- Example client logos (Nuclear-21 en AREVA verwijderd) -->
                                 <div class="partner-logo-item">
                                     <div class="placeholder-logo">
                                         <a href="https://www.iaea.org/" target="_blank">
@@ -303,14 +226,6 @@
                                         <svg width="80" height="40" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect x="5" y="5" width="70" height="30" rx="4" stroke="#ffffff" stroke-width="2"/>
                                             <text x="40" y="25" font-family="Arial" font-size="12" text-anchor="middle" fill="#ffffff">NRG</text>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="partner-logo-item">
-                                    <div class="placeholder-logo">
-                                        <svg width="80" height="40" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <rect x="5" y="5" width="70" height="30" rx="4" stroke="#ffffff" stroke-width="2"/>
-                                            <text x="40" y="25" font-family="Arial" font-size="12" text-anchor="middle" fill="#ffffff">AREVA</text>
                                         </svg>
                                     </div>
                                 </div>
@@ -345,13 +260,6 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="partner-logo-item">
-                                    <div class="placeholder-logo">
-                                        <a href="https://www.nuclear-21.net/" target="_blank">
-                                            <img src="image/Nuclear-21_Logo_transparant.PNG" alt="Nuclear-21 Logo" width="80" height="40">
-                                        </a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -362,9 +270,16 @@
         <section id="publications" class="section">
             <div class="container">
                 <h2 class="section-title gsap-fade-up">Publications & Presentations</h2>
-                <p class="subtitle gsap-fade-up">For over 30 years, this archive has reflected ongoing contributions to nuclear science, radiation protection, and scientific education — including peer-reviewed publications, invited lectures, and technical reports.</p>
-                <div class="cta-container">
-                    <a href="publications.html" class="btn">Explore the full archive</a>
+                <div class="publications-content">
+                    <div class="publications-text">
+                        <p class="subtitle gsap-fade-up">For over 30 years, this archive has reflected ongoing contributions to nuclear science, radiation protection, and scientific education — including peer-reviewed publications, invited lectures, and technical reports.</p>
+                        <div class="cta-container">
+                            <a href="publications.html" class="btn">Explore the full archive</a>
+                        </div>
+                    </div>
+                    <div class="publications-image gsap-fade-right">
+                        <img src="image/Futuristic Library Interior.PNG" alt="Library Interior" class="library-image">
+                    </div>
                 </div>
             </div>
         </section>
@@ -372,7 +287,7 @@
         <section id="about" class="section">
             <div class="container">
                 <h2 class="section-title gsap-fade-up">About Me</h2>
-                <p class="subtitle gsap-fade-up">NUCLIC provides nuclear consultancy services with a focus on reactor physics and safety. Based in the Netherlands, we serve clients worldwide.</p>
+                <p class="subtitle gsap-fade-up"><span class="nuclic-text">NUCL<span class="highlight-red">IC</span></span> provides nuclear consultancy services with a focus on reactor physics and safety. Based in the Netherlands, we serve clients worldwide.</p>
                 <div class="section-content">
                     <div class="profile-image">
                         <img src="image/profiel foto jim_ tranparant 1.PNG" alt="Dr. J.C. Kuijper" class="person-photo">
@@ -383,6 +298,7 @@
                     </div>
                     <div class="text-content">
                         <div class="about-bio">
+                            <p>At <span class="nuclic-text">NUCL<span class="highlight-red">IC</span></span>, we are dedicated to advancing the effective, safe, and innovative use of nuclear technology. Our mission is to support and promote the peaceful application of nuclear energy, always upholding the highest standards of safety and quality. With deep expertise in reactor physics and nuclear safety, we provide high-quality consultancy services to the nuclear sector, helping clients achieve excellence in every project.</p>
                             <p>Jim Kuijper received a PhD in nuclear reactor physics from Delft University of Technology (Delft, NLD) in 1992. His PhD work comprised the investigation of the properties of a novel nuclear reactor design with gaseous fuel (so, a Gaseous Core Fission Reactor) by means of computer simulation. Since then he reverted to more "standard" nuclear systems with the Energy Research Foundation ECN and the Nuclear Research & Consultancy Group NRG in Petten, the Netherlands, until 2014. In 2015 he initiated NUCLIC (Nuclear Innovation Consultancy). In May 2017 he also joined Nuclear-21.</p>
                             
                             <p>His main field of expertise includes nuclear reactor physics, space-time reactor kinetics, reactor dynamics, reactor safety, criticality safety, uncertainty assessment and computer code development for various nuclear reactor systems, in which he has been active both as researcher and project manager. From 2006 until 2009 he was the coordinator of the PUMA project ("Plutonium and Minor Actinide Management in Thermal High-Temperature Gas-Cooled Reactors") within the EURATOM 6th Framework Program.</p>
@@ -417,7 +333,7 @@
                                         <svg width="20" height="20" viewBox="0 0 24 24">
                                             <path fill="currentColor" d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
                                         </svg>
-                                        <a href="mailto:jimkuijper@gmail.com">jimkuijper@gmail.com</a>
+                                        <a href="mailto:kuijper@nuclic.nl">kuijper@nuclic.nl</a>
                                     </li>
                                     <li>
                                         <svg width="20" height="20" viewBox="0 0 24 24">
@@ -467,7 +383,7 @@
                                 <label for="message">Message</label>
                                 <textarea id="message" name="message" rows="5" placeholder="Please describe your request in detail..." required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-submit">Schedule free consultation</button>
+                            <button type="submit" class="btn btn-submit">Send</button>
                         </form>
                     </div>
                 </div>
@@ -480,15 +396,13 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <img src="image/NUCLIC_logo.PNG" alt="NUCLIC Logo" id="nuclic-logo-footer" class="footer-logo-img">
-                    <p>NUCLIC - Nuclear innovation consultancy</p>
+                    <p><span class="nuclic-text">NUCL<span class="highlight-red">IC</span></span> - Nuclear <span class="highlight-red">I</span>nnovation<br><span class="consultancy-text"><span class="highlight-red">C</span>onsultancy</span></p>
                 </div>
                 <div class="footer-nav">
                     <a href="#home">Home</a>
-                    <a href="#mission">Mission</a>
                     <a href="#expertise">Expertise</a>
                     <a href="#services">Services</a>
                     <a href="#projects">Projects</a>
-                    <a href="#partners">Partners</a>
                     <a href="publications.html">Publications</a>
                     <a href="#about">About</a>
                     <a href="#contact">Contact</a>
@@ -497,12 +411,12 @@
                     <a href="https://www.stichting-eline.org/nl/public/index" target="_blank">
                         <img src="image/Eline_logo_transparant.PNG" alt="Eline Foundation Logo" class="footer-sponsor-logo">
                     </a>
-                    <p><a href="https://www.stichting-eline.org/nl/public/index" target="_blank">NUCLIC is proud sponsor of the Eline Foundation - de Cirkel is Rond</a></p>
+                    <p><a href="https://www.stichting-eline.org/nl/public/index" target="_blank"><span class="nuclic-text">NUCL<span class="highlight-red">IC</span></span> is proud sponsor of the Stichting Eline ‑ de Cirkel is Rond</a></p>
                     <p>"To support the education of children in the Chongqing Municipality, People's Republic of China"</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 NUCLIC. All rights reserved.</p>
+                <p>&copy; 2023 <span class="nuclic-text">NUCL<span class="highlight-red">IC</span></span>. All rights reserved.</p>
             </div>
         </div>
     </footer>

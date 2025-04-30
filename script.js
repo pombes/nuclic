@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initSmoothScrolling();
     initAnimatedHeroText();
-    initTestimonialsSlider();
     initInfiniteSlider();
 });
 
@@ -176,18 +175,21 @@ function closeMenuOnClickOutside(event) {
 
 // Update active nav link based on scroll position
 function updateActiveNavOnScroll() {
-    const sections = document.querySelectorAll('.section');
+    const sections = ['home', 'expertise', 'services', 'projects', 'about', 'contact'];
     const navLinks = document.querySelectorAll('.nav-link');
     
     let currentSection = '';
     const scrollPosition = window.scrollY + 100; // Add offset for better detection
     
     sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
+        const sectionElement = document.getElementById(section);
+        if (!sectionElement) return;
+        
+        const sectionTop = sectionElement.offsetTop;
+        const sectionHeight = sectionElement.clientHeight;
         
         if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            currentSection = section.getAttribute('id');
+            currentSection = section;
         }
     });
     
@@ -246,6 +248,24 @@ function initScrollAnimations() {
         duration: 1,
         delay: 0.5,
         ease: 'power3.out'
+    });
+    
+    // Animation for publications image
+    gsap.utils.toArray('.publications-image.gsap-fade-right').forEach(image => {
+        gsap.fromTo(image, 
+            { x: 60, opacity: 0 },
+            {
+                x: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: image,
+                    start: 'top 80%',
+                    toggleActions: 'play reverse restart reverse',
+                }
+            }
+        );
     });
     
     gsap.to('.scroll-indicator.gsap-fade-up', {
@@ -831,286 +851,53 @@ document.addEventListener("DOMContentLoaded", async function() {
 
 // Animate hero section text rotation
 function initAnimatedHeroText() {
+    const animatedTextWrapper = document.querySelector('.animated-text-wrapper');
+    if (!animatedTextWrapper) return;
+
     const animatedTexts = document.querySelectorAll('.animated-text');
-    const animatedContainer = document.querySelector('.animated-text-container');
-    let currentTextIndex = 0;
-    const isMobile = window.innerWidth <= 768;
+    if (animatedTexts.length === 0) return;
+
+    let currentIndex = 0;
     
-    if (animatedTexts.length > 0) {
-        // Ensure container is visible
-        if (animatedContainer) {
-            animatedContainer.style.opacity = '1';
-            
-            // Set appropriate container height based on device
-            if (isMobile) {
-                animatedContainer.style.height = '5.5rem';
+    // Initialize by showing the first text
+    animatedTexts[0].classList.add('active');
+    
+    // On mobile devices, adjust the container height if needed
+    function adjustTextHeight() {
+        if (window.innerWidth <= 768) {
+            // Get the height of the current active text
+            const activeText = document.querySelector('.animated-text.active');
+            if (activeText) {
+                // Add a bit of extra space
+                const textHeight = activeText.offsetHeight;
+                const container = document.querySelector('.animated-text-container');
+                if (container) {
+                    container.style.minHeight = (textHeight + 10) + 'px';
+                }
             }
         }
-        
-        // Set the first text as active initially
-        setTimeout(() => {
-            animatedTexts[0].classList.add('active');
-        }, 500); // Small delay for initial animation
-        
-        // Change text every 5 seconds
-        setInterval(() => {
-            // Remove active class from current text
-            animatedTexts[currentTextIndex].classList.remove('active');
-            
-            // Update index to next text
-            currentTextIndex = (currentTextIndex + 1) % animatedTexts.length;
-            
-            // Add active class to new text
-            animatedTexts[currentTextIndex].classList.add('active');
-        }, 5000);
     }
     
-    // Adjust container height on window resize
-    window.addEventListener('resize', () => {
-        const newIsMobile = window.innerWidth <= 768;
+    // Adjust height initially and when text changes
+    adjustTextHeight();
+    
+    // Set up the animation cycle
+    setInterval(() => {
+        // Hide current text
+        animatedTexts[currentIndex].classList.remove('active');
         
-        if (animatedContainer) {
-            if (newIsMobile) {
-                animatedContainer.style.height = '5.5rem';
-            } else {
-                animatedContainer.style.height = '3.2rem';
-            }
-        }
-    });
-}
-
-// Initialize testimonials slider
-initTestimonialsSlider();
-
-// Initialize partners slider
-initPartnersSlider();
-
-// Testimonials slider implementation
-function initTestimonialsSlider() {
-    const testimonialsContainer = document.querySelector('.testimonials-container');
-    
-    if (!testimonialsContainer) return;
-    
-    const testimonialsImagesContainer = document.querySelector('.testimonials-images');
-    const testimonialTextContainer = document.querySelector('.testimonial-text');
-    const prevButton = document.querySelector('.btn-prev');
-    const nextButton = document.querySelector('.btn-next');
-    
-    // Define testimonials data
-    const testimonials = [
-        {
-            quote: "Luc Van Den Durpel is a civil and nuclear engineer with a PhD in nuclear energy systems from the University of Ghent. He has held research and strategic roles at the Belgian Nuclear Research Center, the OECD Nuclear Energy Agency in Paris, and Argonne National Laboratory in the U.S., focusing on advanced nuclear systems and Generation IV. He later served as Scientific Director and VP of Strategic Analysis at AREVA. Since 2015, he has led Nuclear-21, an international consultancy supporting decision-making in nuclear technology and policy.",
-            name: "Dr. Luc Van Den Durpel",
-            designation: "Nuclear-21",
-            src: "image/Luc Van Den Durpel.PNG"
-        },
-        {
-            quote: "Karel Bueno de Mesquita is a radiochemist with a PhD in nuclear physics. As safety and licensing manager at Nucon Engineering, he contributed to major nuclear projects, including the Leibstadt plant in Switzerland and the development of a compact boiling water reactor with General Electric. He played a key role in assessing the feasibility of nuclear energy in the Netherlands, helped pioneer Environmental Impact Assessments, and supported the implementation of the Seveso Directive. As a consultant, he has provided strategic and organizational advice across various sectors.",
-            name: "Dr. Karel Bueno de Mesquita",
-            designation: "Nuclear-21",
-            src: "image/Karel Bueno de Mesquita.PNG"
-        },
-        {
-            quote: "Frédérique Damerval is a renowned expert in nuclear decontamination, with over 22 years at AREVA's Decommissioning and Dismantling Business Unit. Her experience spans R&D, industrialisation, and innovation in effluent and waste treatment. Since 2016, she has supported nuclear education at École des Ponts ParisTech. In 2022, she founded Tech Y Tech to help innovative SMEs develop technologies for the nuclear maintenance and decommissioning sector.",
-            name: "Frédérique Damerval",
-            designation: "Nuclear-21",
-            src: "image/Frédérique Damerval.PNG"
-        },
-        {
-            quote: "Serge Runge holds a Ph.D. in Atomic Physics and an engineering degree from École Centrale de Paris. His career spans strategic and leadership roles in the French Atomic Energy Commission, COGEMA, and AREVA, focusing on international nuclear projects including MOX fuel initiatives in the U.S. and Russia. He later led AREVA's training programs and managed relations with Eastern Europe and ROSATOM. He is a board member of SFANS and fluent in French, Russian, and English.",
-            name: "Dr. Serge Runge",
-            designation: "Nuclear-21",
-            src: "image/Serge Runge.PNG"
-        },
-        {
-            quote: "Jan is the Strategic Advisor and Partner at Nuclear-21 NL BV, widely recognized as a trusted advisor to Executive and Supervisory Boards across various industries for over 35 years. With deep expertise in international business complexity and corporate finance, he has guided companies through strategic transformations, restructuring, and major transactions. Jan brings a strong understanding of both Dutch and international corporate governance, with a stakeholder-focused approach grounded in integrity, respect, and community development.",
-            name: "Jan J. Stuyt",
-            designation: "Nuclear-21",
-            src: "image/Jan J. Stuyt.PNG"
-        },
-        {
-            quote: "Aliki joined Nuclear-21 in May 2023, bringing over two decades of experience in nuclear energy systems and sustainability. Prior to this, she led the 3E Analysis Unit (Energy, Economics, Environment) at the IAEA, where she focused on aligning nuclear energy with sustainable development and climate goals. She previously worked at NRG on decommissioning and waste management projects and began her career in advanced reactor research, initiating the Dutch program on Generation IV systems. At Nuclear-21, she oversees international activities on nuclear energy's role in sustainable energy systems and newcomer country strategies.",
-            name: "Aliki van Heek",
-            designation: "Nuclear-21",
-            src: "image/Aliki van Heek.PNG"
-        },
-        {
-            quote: "Caroline Jorant is an international energy consultant specializing in nuclear energy and security. She previously served as Director for Non-proliferation and International Institutions at AREVA and spent over a decade managing international relations in the French nuclear industry. She represented France in the EU's Atomic Questions Group and held roles at the French Permanent Representation to the EU and the CEA. She holds a Master's in International Relations from Johns Hopkins University (SAIS).",
-            name: "Caroline Jorant",
-            designation: "Nuclear-21",
-            src: "image/Caroline Jorant.PNG"
-        },
-        {
-            quote: "Gian Luigi Fiorini is a nuclear engineer with over 40 years of experience at the French Atomic Energy Commission (CEA). He has worked extensively on the design, operation, and safety assessment of nuclear reactors, including naval and fusion systems like ITER. He contributed to nuclear licensing efforts under French regulation and played a key role in Gen-IV reactor collaborations. With broad international experience coordinating bilateral and multilateral programs, he now serves as \"Chargé de Mission\" in the office of the French High Commissioner for Atomic Energy, focusing on nuclear safety.",
-            name: "Gian Luigi Fiorini",
-            designation: "Nuclear-21",
-            src: "image/Gian-Luigi Fiorini.PNG"
-        }
-    ];
-    
-    let activeIndex = 0;
-    
-    // Initialize the slider
-    function initSlider() {
-        // Create image elements
-        testimonials.forEach((testimonial, index) => {
-            const imgElement = document.createElement('img');
-            imgElement.src = testimonial.src;
-            imgElement.alt = testimonial.name;
-            imgElement.classList.add('testimonial-image');
-            if (index === activeIndex) {
-                imgElement.classList.add('active');
-            } else if (index === (activeIndex + 1) % testimonials.length) {
-                imgElement.classList.add('next');
-            } else if (index === (activeIndex - 1 + testimonials.length) % testimonials.length) {
-                imgElement.classList.add('prev');
-            }
-            testimonialsImagesContainer.appendChild(imgElement);
-        });
+        // Update index
+        currentIndex = (currentIndex + 1) % animatedTexts.length;
         
-        // Create content elements
-        updateContent();
+        // Show new text
+        animatedTexts[currentIndex].classList.add('active');
         
-        // Add event listeners
-        prevButton.addEventListener('click', handlePrev);
-        nextButton.addEventListener('click', handleNext);
-        
-        // Autoplay
-        startAutoplay();
-    }
+        // Adjust height for new text
+        setTimeout(adjustTextHeight, 100);
+    }, 4000); // Change text every 4 seconds
     
-    // Update content based on active index
-    function updateContent() {
-        // Clear existing content
-        testimonialTextContainer.innerHTML = '';
-        
-        // Create new content
-        const activeTestimonial = testimonials[activeIndex];
-        
-        const nameElement = document.createElement('h3');
-        nameElement.classList.add('testimonial-name');
-        nameElement.textContent = activeTestimonial.name;
-        
-        const designationElement = document.createElement('p');
-        designationElement.classList.add('testimonial-designation');
-        designationElement.textContent = activeTestimonial.designation;
-        
-        const quoteElement = document.createElement('p');
-        quoteElement.classList.add('testimonial-quote');
-        quoteElement.textContent = activeTestimonial.quote;
-        
-        testimonialTextContainer.appendChild(nameElement);
-        testimonialTextContainer.appendChild(designationElement);
-        testimonialTextContainer.appendChild(quoteElement);
-        
-        // Trigger animations
-        setTimeout(() => {
-            nameElement.classList.add('active');
-            setTimeout(() => {
-                designationElement.classList.add('active');
-                setTimeout(() => {
-                    quoteElement.classList.add('active');
-                }, 100);
-            }, 100);
-        }, 50);
-    }
-    
-    // Update images based on active index
-    function updateImages() {
-        const images = testimonialsImagesContainer.querySelectorAll('.testimonial-image');
-        
-        images.forEach((image, index) => {
-            // Remove all classes
-            image.classList.remove('active', 'prev', 'next');
-            
-            // Add appropriate class
-            if (index === activeIndex) {
-                image.classList.add('active');
-            } else if (index === (activeIndex + 1) % testimonials.length) {
-                image.classList.add('next');
-            } else if (index === (activeIndex - 1 + testimonials.length) % testimonials.length) {
-                image.classList.add('prev');
-            }
-        });
-    }
-    
-    // Handle next slide
-    function handleNext() {
-        activeIndex = (activeIndex + 1) % testimonials.length;
-        updateImages();
-        updateContent();
-        restartAutoplay();
-    }
-    
-    // Handle previous slide
-    function handlePrev() {
-        activeIndex = (activeIndex - 1 + testimonials.length) % testimonials.length;
-        updateImages();
-        updateContent();
-        restartAutoplay();
-    }
-    
-    // Autoplay functionality
-    let autoplayTimer;
-    
-    function startAutoplay() {
-        autoplayTimer = setInterval(handleNext, 12000);
-    }
-    
-    function restartAutoplay() {
-        clearInterval(autoplayTimer);
-        startAutoplay();
-    }
-    
-    // Initialize the slider
-    initSlider();
-}
-
-// Partners Slider Implementation
-function initPartnersSlider() {
-    const sliderContent = document.querySelector('.infinite-slider-content');
-    
-    if (!sliderContent) return; // Exit if container doesn't exist
-    
-    // Get all partner logo items
-    const partnerItems = document.querySelectorAll('.partner-logo-item');
-    
-    if (partnerItems.length > 0) {
-        // Clone items for infinite effect
-        partnerItems.forEach(item => {
-            const clone = item.cloneNode(true);
-            sliderContent.appendChild(clone);
-        });
-        
-        // Start the animation
-        startPartnersAnimation();
-    }
-}
-
-function startPartnersAnimation() {
-    const sliderContent = document.querySelector('.infinite-slider-content');
-    
-    if (!sliderContent) return;
-    
-    // Create GSAP animation for infinite scroll
-    gsap.to(sliderContent, {
-        x: "-50%",
-        duration: 20,
-        ease: "linear",
-        repeat: -1
-    });
-    
-    // Pause animation on hover
-    const slider = document.querySelector('.infinite-slider');
-    if (slider) {
-        slider.addEventListener('mouseenter', () => {
-            gsap.to(sliderContent, { timeScale: 0.1 });
-        });
-        
-        slider.addEventListener('mouseleave', () => {
-            gsap.to(sliderContent, { timeScale: 1 });
-        });
-    }
+    // Also adjust on resize
+    window.addEventListener('resize', adjustTextHeight);
 }
 
 // Initialize the infinite slider functionality
@@ -1183,6 +970,53 @@ function initInfiniteSlider() {
             currentTranslate += (touchEndX - touchStartX);
             sliderContent.style.animationPlayState = 'running';
             sliderContent.style.transform = '';
+        });
+    }
+}
+
+// Partners Slider Implementation
+function initPartnersSlider() {
+    const sliderContent = document.querySelector('.infinite-slider-content');
+    
+    if (!sliderContent) return; // Exit if container doesn't exist
+    
+    // Get all partner logo items
+    const partnerItems = document.querySelectorAll('.partner-logo-item');
+    
+    if (partnerItems.length > 0) {
+        // Clone items for infinite effect
+        partnerItems.forEach(item => {
+            const clone = item.cloneNode(true);
+            sliderContent.appendChild(clone);
+        });
+        
+        // Start the animation
+        startPartnersAnimation();
+    }
+}
+
+function startPartnersAnimation() {
+    const sliderContent = document.querySelector('.infinite-slider-content');
+    
+    if (!sliderContent) return;
+    
+    // Create GSAP animation for infinite scroll
+    gsap.to(sliderContent, {
+        x: "-50%",
+        duration: 20,
+        ease: "linear",
+        repeat: -1
+    });
+    
+    // Pause animation on hover
+    const slider = document.querySelector('.infinite-slider');
+    if (slider) {
+        slider.addEventListener('mouseenter', () => {
+            gsap.to(sliderContent, { timeScale: 0.1 });
+        });
+        
+        slider.addEventListener('mouseleave', () => {
+            gsap.to(sliderContent, { timeScale: 1 });
         });
     }
 }
