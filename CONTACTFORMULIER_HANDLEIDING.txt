@@ -1,0 +1,60 @@
+==============================================================
+               NUCLIC CONTACTFORMULIER HANDLEIDING
+==============================================================
+
+INTRODUCTIE
+===========
+Deze handleiding beschrijft hoe u het contactformulier op de NUCLIC website kunt 
+configureren, zodat berichten via het formulier naar uw e-mailadres worden 
+verzonden via TransIP e-mail.
+
+SNELSTART GIDS
+==============
+Wachtwoord instellen (alleen deze stap is verplicht):
+
+1. Open het bestand "email-config.php" in een tekstverwerker (zoals Kladblok of NotePad)
+2. Zoek de regel waar "password" => "VUL_HIER_UW_WACHTWOORD_IN" staat
+3. Verander "VUL_HIER_UW_WACHTWOORD_IN" naar het wachtwoord van uw TransIP e-mailadres
+   (contact@nuclic.nl)
+4. Sla het bestand op
+
+Bijvoorbeeld, wijzig:
+'password' => 'VUL_HIER_UW_WACHTWOORD_IN',
+
+naar:
+'password' => 'MijnWachtwoord123',
+
+Het contactformulier is nu ingesteld en klaar voor gebruik!
+
+BIJ WACHTWOORDWIJZIGING
+=======================
+Als u het wachtwoord van uw TransIP e-mailadres wijzigt, volg dan deze stappen:
+
+1. Open het bestand "email-config.php" in een tekstverwerker
+2. Zoek de regel met 'password' => '[uw huidige wachtwoord]'
+3. Vervang het huidige wachtwoord door uw nieuwe wachtwoord (behoud de aanhalingstekens)
+4. Sla het bestand op
+
+TECHNISCHE DETAILS
+=================
+Alle benodigde bestanden zijn al ingesteld:
+
+1. email-config.php - Bevat uw e-mail instellingen
+2. mail-handler.php - Verwerkt het contactformulier en verstuurt de e-mail
+3. PHPMailer/ - Bevat de PHPMailer bibliotheek voor het versturen van e-mails
+
+TROUBLESHOOTING
+==============
+Als het contactformulier niet werkt, controleer dan het volgende:
+
+1. Controleer of het wachtwoord correct is ingesteld in email-config.php
+2. Zorg dat de TransIP instellingen in uw controlepaneel zijn ingeschakeld
+3. Controleer of het domein nuclic.nl de juiste DNS-records heeft (SPF, DKIM, etc.)
+
+Voor meer informatie, raadpleeg de TransIP kennisbank artikelen:
+- https://www.transip.nl/knowledgebase/website/230-wil-contactformulier-mijn-website-gebruiken
+- https://www.transip.nl/knowledgebase/7186-mijn-website-verstuurt-geen-e-mail
+
+==============================================================
+       Deze handleiding is gemaakt voor NUCLIC, 2025
+============================================================== 

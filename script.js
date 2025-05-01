@@ -645,8 +645,74 @@ function initCustomCursor() {
 // Form Validation for Contact Form
 const contactForm = document.querySelector('.contact-form form');
 if (contactForm) {
+    // Check URL parameters voor statusberichten
+    window.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get('status');
+        const message = urlParams.get('message');
+        const statusElement = document.getElementById('form-status-message');
+        
+        if (status === 'success') {
+            statusElement.textContent = 'Your message has been sent successfully. We will contact you as soon as possible.';
+            statusElement.style.display = 'block';
+            statusElement.style.backgroundColor = '#dff0d8';
+            statusElement.style.color = '#3c763d';
+            statusElement.style.borderLeft = '4px solid #3c763d';
+            
+            // Scroll naar contactformulier als er een statusbericht is
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            // Verberg het bericht na 5 seconden
+            setTimeout(() => {
+                statusElement.style.display = 'none';
+                // Verwijder status parameters uit URL
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }, 5000);
+        } else if (status === 'error') {
+            // Toon verschillende foutmeldingen op basis van het message parameter
+            let errorMsg = 'There was an error sending your message. Please try again later.';
+            
+            switch(message) {
+                case 'validation':
+                    errorMsg = 'Please complete all required fields correctly.';
+                    break;
+                case 'configuration':
+                    errorMsg = 'The contact form is not properly configured. Please contact the site administrator.';
+                    break;
+                case 'phpmailer':
+                    errorMsg = 'Mail system component is missing. Please contact the site administrator.';
+                    break;
+                case 'sending':
+                    errorMsg = 'There was an error sending your message. Please try again later.';
+                    break;
+            }
+            
+            statusElement.textContent = errorMsg;
+            statusElement.style.display = 'block';
+            statusElement.style.backgroundColor = '#f2dede';
+            statusElement.style.color = '#a94442';
+            statusElement.style.borderLeft = '4px solid #a94442';
+            
+            // Scroll naar contactformulier als er een statusbericht is
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            // Verberg het bericht na 5 seconden
+            setTimeout(() => {
+                statusElement.style.display = 'none';
+                // Verwijder status parameters uit URL
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }, 5000);
+        }
+    });
+
     contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+        // Controleer eerst client-side validatie
         
         const nameInput = document.getElementById('name');
         const emailInput = document.getElementById('email');
@@ -687,29 +753,16 @@ if (contactForm) {
             clearError(messageInput);
         }
         
-        if (isValid) {
-            // Simulate form submission
+        if (!isValid) {
+            e.preventDefault(); // Voorkom verzenden als formulier niet geldig is
+        } else {
+            // Formulier is geldig, toon verzendstatus
             const submitButton = document.querySelector('.btn-submit');
             submitButton.disabled = true;
             submitButton.textContent = 'Sending...';
             
-            // Simulate API call
-            setTimeout(() => {
-                contactForm.reset();
-                submitButton.disabled = false;
-                submitButton.textContent = 'Submit';
-                
-                // Show success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'success-message';
-                successMessage.textContent = 'Your message has been sent successfully. We will contact you as soon as possible.';
-                
-                contactForm.appendChild(successMessage);
-                
-                setTimeout(() => {
-                    successMessage.remove();
-                }, 5000);
-            }, 1500);
+            // Laat form submission doorgaan naar mail-handler.php
+            return true;
         }
     });
 }

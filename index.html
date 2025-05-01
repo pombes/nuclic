@@ -63,15 +63,15 @@
                 <div class="hero-text gsap-fade-up">
                     <h1>NUCL<span style="color: #ff0000;">IC</span></h1>
                     <div class="animated-text-container">
-                        <h2 class="static-text">Nuclear innovation consultancy</h2>
+                        <h2 class="static-text"><strong>Nuclear innovation consultancy</strong></h2>
                         <div class="animated-text-wrapper">
-                            <h2 class="animated-text">Nuclear innovation<span class="mobile-only-break"><br></span> consultancy</h2>
-                            <h2 class="animated-text">Reactor safety &<span class="mobile-only-break"><br></span> criticality analyses</h2>
-                            <h2 class="animated-text">Project &<span class="mobile-only-break"><br></span> management</h2>
+                            <h2 class="animated-text"><strong>Nuclear innovation<span class="mobile-only-break"><br></span> consultancy</strong></h2>
+                            <h2 class="animated-text"><strong>Reactor safety &<span class="mobile-only-break"><br></span> criticality analyses</strong></h2>
+                            <h2 class="animated-text"><strong>Project <span class="mobile-only-break"><br></span>management</strong></h2>
                         </div>
                     </div>
                     <p>Supporting and promoting the peaceful and innovative use of nuclear energy technology</p>
-                    <p><small>Partner of <a href="https://www.nuclear-21.net/" target="_blank" rel="noopener">Nuclear-21</a></small></p>
+                    <p><small>Partner of <a href="https://www.nuclear-21.net/" target="_blank" rel="noopener"><strong>Nuclear-21</strong></a></small></p>
                     <a href="#contact" class="btn">Contact us</a>
                 </div>
                 <div class="hero-image gsap-fade-left">
@@ -325,12 +325,6 @@
                                 <ul class="contact-links">
                                     <li>
                                         <svg width="20" height="20" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
-                                        </svg>
-                                        <a href="tel:+31640229728">+31 (0)6 4022 9728</a>
-                                    </li>
-                                    <li>
-                                        <svg width="20" height="20" viewBox="0 0 24 24">
                                             <path fill="currentColor" d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
                                         </svg>
                                         <a href="mailto:kuijper@nuclic.nl">kuijper@nuclic.nl</a>
@@ -366,7 +360,11 @@
                     <div class="contact-form">
                         <h3>Get in Touch</h3>
                         <p class="form-intro">Ready to learn more about our services? Fill out the form below and we'll get back to you as soon as possible.</p>
-                        <form>
+                        
+                        <!-- Status meldingen -->
+                        <div id="form-status-message" style="display: none; margin-bottom: 20px; padding: 10px 15px; border-radius: 4px;"></div>
+                        
+                        <form action="mail-handler.php" method="post">
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" id="name" name="name" placeholder="Your full name" required>
