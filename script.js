@@ -1,6 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Simulate loading time
-    setTimeout(() => {
+    // Preloader wordt nu verwijderd na window.onload event
+    // Dit zorgt ervoor dat alle assets (afbeeldingen, scripts, stylesheets) volledig zijn geladen
+    
+    // Verwijder elke bestaande preloader hide timer (als die bestaat)
+    let existingTimer = window.preloaderTimer;
+    if (existingTimer) {
+        clearTimeout(existingTimer);
+    }
+    
+    // Voeg preloader toe indien deze nog niet bestaat
+    if (!document.querySelector('.preloader')) {
+        const preloader = document.createElement('div');
+        preloader.className = 'preloader';
+        preloader.innerHTML = '<div class="loader"></div>';
+        document.body.prepend(preloader);
+    }
+    
+    // Verberg de preloader nadat alle assets zijn geladen
+    const hidePreloader = () => {
         const preloader = document.querySelector('.preloader');
         if (preloader) {
             preloader.classList.add('hidden');
@@ -8,7 +25,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 preloader.style.display = 'none';
             }, 500);
         }
-    }, 1000);
+    };
+    
+    // Gebruik de load event van het window object om te wachten tot alles is geladen
+    if (document.readyState === 'complete') {
+        // Als alles al geladen is (bv. uit cache)
+        hidePreloader();
+    } else {
+        window.addEventListener('load', () => {
+            // Controleer of GSAP ready is voordat we de preloader verwijderen
+            // Dit zorgt ervoor dat animaties soepel starten
+            if (typeof gsap !== 'undefined') {
+                // Kleine vertraging om GSAP plugins tijd te geven om te initialiseren
+                setTimeout(hidePreloader, 100);
+            } else {
+                hidePreloader();
+            }
+        });
+        
+        // Veiligheidsnet: verberg de preloader na maximaal 5 seconden
+        // Dit voorkomt dat de preloader blijft hangen als er een probleem is met het laden
+        window.preloaderTimer = setTimeout(hidePreloader, 5000);
+    }
 
     // Scroll to section if coming from publications page
     const sectionToScroll = sessionStorage.getItem('scrollToSection');
@@ -41,14 +79,6 @@ function initNavigation() {
     const nav = document.querySelector('nav');
     const navLinks = document.querySelectorAll('.nav-link');
     const bodyElement = document.body;
-
-    // Add preloader to DOM if not present
-    if (!document.querySelector('.preloader')) {
-        const preloader = document.createElement('div');
-        preloader.className = 'preloader';
-        preloader.innerHTML = '<div class="loader"></div>';
-        document.body.appendChild(preloader);
-    }
 
     // Header scroll effect
     window.addEventListener('scroll', () => {
@@ -613,35 +643,6 @@ function initSmoothScrolling() {
     });
 }
 
-// Custom Cursor
-function initCustomCursor() {
-    const cursor = document.querySelector('.cursor');
-    
-    if (cursor) {
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-        
-        // Cursor effects on hoverable elements
-        const hoverableElements = document.querySelectorAll('a, button, .card, .service-item, .partner-card, .timeline-content, .btn');
-        
-        hoverableElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-                cursor.style.mixBlendMode = 'difference';
-                cursor.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
-            });
-            
-            el.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-                cursor.style.mixBlendMode = 'normal';
-                cursor.style.backgroundColor = 'rgba(52, 152, 219, 0.3)';
-            });
-        });
-    }
-}
-
 // Form Validation for Contact Form
 const contactForm = document.querySelector('.contact-form form');
 if (contactForm) {
@@ -801,16 +802,6 @@ function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
-
-// Add preloader to the page
-document.addEventListener('DOMContentLoaded', () => {
-    if (!document.querySelector('.preloader')) {
-        const preloader = document.createElement('div');
-        preloader.className = 'preloader';
-        preloader.innerHTML = '<div class="loader"></div>';
-        document.body.prepend(preloader);
-    }
-});
 
 // Logo hover effect
 document.addEventListener('DOMContentLoaded', () => {

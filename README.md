@@ -141,6 +141,21 @@ Bekijk het bestand `CONTACTFORMULIER_HANDLEIDING.txt` voor meer gedetailleerde i
    </div>
    ```
 
+## Nette URLs
+De website maakt gebruik van URL rewriting om nette URLs te bieden:
+
+- `/home` → Homepage
+- `/expertise` → Expertise sectie
+- `/services` → Services sectie
+- `/projects` → Projects sectie
+- `/about` → About sectie 
+- `/contact` → Contact sectie
+- `/publications` → Publications pagina
+
+Deze functionaliteit vereist een Apache webserver met mod_rewrite ingeschakeld. De benodigde .htaccess configuratie is al opgenomen in het project.
+
+> **Opmerking voor ontwikkelaars**: Tijdens lokale ontwikkeling zonder webserver blijven alle originele links (zoals index.html#expertise) gewoon werken.
+
 ## Credits
 
 Ontworpen en ontwikkeld voor NUCLIC, 2025 
